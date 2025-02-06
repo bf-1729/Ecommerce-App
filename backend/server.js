@@ -16,11 +16,7 @@ connectCloudinary()
 
 //middlewares
 app.use(express.json())
-app.use(cors({
-    origin: 'https://buyease-frontend-tau.vercel.app',  // Replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors());
 
 //api endpoints
 app.use("/api/user",userRouter)
