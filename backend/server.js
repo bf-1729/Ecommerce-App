@@ -1,35 +1,38 @@
-import express from "express"
-import cors from "cors"
-import userRouter from "./routes/userRoute.js"
-import 'dotenv/config'
-import connectDB from "./config/mongodb.js"
-import connectCloudinary from "./config/cloudinary.js"
-import productRouter from "./routes/productRoute.js"
-import cartRouter from "./routes/cartRoute.js"
-import orderRouter from "./routes/orderRoute.js"
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import userRouter from "./routes/userRoute.js";
+import connectDB from "./config/mongodb.js";
+import productRouter from "./routes/productRoute.js";
+import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
+import connectCloudinary from "./config/cloudinary.js";
 
-//App config
-const app = express()
-const port = process.env.PORT || 4000
-connectDB()
-connectCloudinary()
+dotenv.config();
 
-//middlewares
-app.use(express.json())
-app.use(cors());
+// App config
+const app = express();
+const port = process.env.PORT || 4000;
+connectDB();
+connectCloudinary();  // ✅ Call function properly
 
-//api endpoints
-app.use("/api/user",userRouter)
-app.use("/api/product",productRouter)
-app.use("/api/cart",cartRouter)
-app.use("/api/order",orderRouter)
+// Middlewares
+app.use(express.json());
+app.use(cors({ origin: "*", credentials: true }));
 
-app.get('/',(req,res)=>{
-    res.send('API Working')
-})
+// API endpoints
+app.use("/api/user", userRouter);
+app.use("/api/product", productRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
-app.listen(port,()=>{
-    console.log('Server started on port :' +port)
-})
+app.get("/", (req, res) => {
+  res.send("API Working");
+});
 
-module.exports = app;
+app.listen(port, () => {
+  console.log("Server started on port: " + port);
+});
+
+// ✅ Replace `module.exports = app;` with:
+export default app;

@@ -1,11 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();  // ✅ Load environment variables first
 
 const connectDB = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/e-commerce")
-    console.log("Connected to MongoDB");
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected Successfully`);
   } catch (error) {
-    console.log("Error: ", error.message);
+    console.error(`Error: ${error.message}`);
+    process.exit(1); // Stop server if DB connection fails
   }
 };
 
