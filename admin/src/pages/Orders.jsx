@@ -86,12 +86,12 @@ const Orders = ({token}) => {
               <p>Date : {new Date(order.date).toLocaleString()}</p>
             </div>
             <p className='text-sm sm:text-[15px]'>{currency}{order.amount}</p>
-            <select onChange={(event)=>statusHandler(event,order._id)} value={order.status} className='p-2 font-semibold'>
-              <option value="Order Placed">Order Placed</option>
-              <option value="Packing">Packing</option>
-              <option value="Shipped">Shipped</option>
-              <option value="Out for delivery">Out for delivery</option>
-              <option value="Delivered">Delivered</option>
+            <select onChange={(event)=>statusHandler(event,order._id)} value={order.status} className={`p-2 font-semibold text-white ${order.status === "Order Placed" ? "bg-blue-500" : order.status === "Packing" ? "bg-orange-600" : order.status === "Shipped" ? "bg-purple-600" : order.status === "Out for delivery" ? "bg-teal-500" : order.status === "Delivered" ? "bg-green-600" :""}`}>
+              <option className='bg-gray-400' value="Order Placed">Order Placed</option>
+              <option className='bg-gray-400' value="Packing">Packing</option>
+              <option className='bg-gray-400' value="Shipped">Shipped</option>
+              <option className='bg-gray-400' value="Out for delivery">Out for delivery</option>
+              <option className='bg-gray-400' value="Delivered">Delivered</option>
             </select>
             </div>
           ))

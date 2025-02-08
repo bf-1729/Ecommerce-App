@@ -20,6 +20,7 @@ const App = () => {
     localStorage.setItem('token',token)
   },[token])
 
+
   
   return (
     <div className='bg-white min-h-screen'>
@@ -34,6 +35,10 @@ const App = () => {
   draggable 
   pauseOnHover 
 />
+<<<<<<< HEAD
+=======
+
+>>>>>>> cc67072 (intial commit or updates)
       {
         token === '' ? <Login setToken={setToken} />
           :

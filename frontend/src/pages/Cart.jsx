@@ -36,7 +36,7 @@ const Cart = () => {
   
 
   return (
-    <div className='border-t pt-14'>
+    <div className='border-t pt-14 mt-20'>
 
       <div className=' text-2xl mb-3'>
         <Title text1={'YOUR'} text2={'CART'} />
@@ -72,8 +72,8 @@ const Cart = () => {
       <div className='flex justify-end my-20'>
         <div className='w-full sm:w-[450px]'>
           <CartTotal />
-          <div className=' w-full text-end'>
-            <button onClick={() => {length >0  ? (navigate('/placeorder')) : (toast.error("Add products to proceed"))}} className='bg-black text-white text-sm my-8 px-8 py-3'>PROCEED TO CHECKOUT</button>
+          <div className='w-full text-end'>
+            <button onClick={() => {length >0  ? (navigate('/placeorder')) : (toast.error("Add products to proceed"))}} className='bg-black text-white text-sm my-8 px-8 py-3 lg:hover:bg-white lg:hover:text-black border border-black'>PROCEED TO CHECKOUT</button>
           </div>
         </div>
       </div>

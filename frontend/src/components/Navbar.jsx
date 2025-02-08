@@ -13,8 +13,10 @@ const Navbar = () => {
         navigate("/login")
     }
   return (
-    <div className='flex items-center justify-between py-5 font-medium'>
+    <div className='fixed top-0 left-0 w-full bg-white z-50 flex items-center lg:justify-around justify-between py-2 px-6 font-medium'>
+        <NavLink to={"/"}>
         <img src={assets.logo} className='w-28 lg:h-14 sm:h-8 bg-white' alt=''/>
+        </NavLink>
         <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
             <NavLink to="/" className="flex flex-col items-center gap-1">
                 <p>HOME</p>
@@ -43,11 +45,12 @@ const Navbar = () => {
             <img onClick={()=>setShowSearch(true)} src={assets.search_icon} className='w-5 cursor-pointer' alt=''></img>
             <div className='group relative'>
                 <img onClick={()=>token ? null : navigate('/login')} src={assets.profile_icon} className='w-5 cursor-pointer' alt=''></img>
-                {token && 
+                {token &&
                 <div className='group-hover:block hidden absolute dropdown-menu right-0'>
-                    <div className='flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100'>
-                        <p onClick={()=>navigate("/orders")} className='cursor-pointer hover:text-black'>Orders</p>
-                        <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+                    <div className='flex flex-col gap-2 w-36 py-3 bg-slate-100'>
+                        <p onClick={()=>navigate("/")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Admin Panel</p>
+                        <p onClick={()=>navigate("/orders")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Orders</p>
+                        <p onClick={logout} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Logout</p>
                     </div>
                 </div>}
             </div>
@@ -57,7 +60,7 @@ const Navbar = () => {
             </Link>
             <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt=''></img>
         </div>
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible?'w-full':'w-0'}`}>
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible?'w-full h-screen':'w-0'}`}>
             <div className='flex flex-col text-gray-600'>
                 <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3'>
                     <img src={assets.dropdown_icon} className='h-4 rotate-180' alt=''></img>

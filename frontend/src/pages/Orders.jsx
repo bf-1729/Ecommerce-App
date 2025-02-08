@@ -44,7 +44,7 @@ const Orders = () => {
     loadOrderData()
   },[token])
   return (
-    <div className='border-t pt-8'>
+    <div className='border-t pt-8 mt-20'>
       <div className='text-2xl'>
         <Title text1={'MY'} text2={'ORDERS'} />
       </div>
@@ -72,7 +72,7 @@ const Orders = () => {
                   <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
                   <p className='text-sm md:text-base'>{item.status}</p>
                 </div>
-                <button onClick={loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm'>
+                <button onClick={loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm lg:hover:bg-gray-400'>
                   Track Order
                 </button>
               </div>
