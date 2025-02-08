@@ -35,10 +35,6 @@ const App = () => {
   draggable 
   pauseOnHover 
 />
-<<<<<<< HEAD
-=======
-
->>>>>>> cc67072 (intial commit or updates)
       {
         token === '' ? <Login setToken={setToken} />
           :
