@@ -18,7 +18,7 @@ const Navbar = () => {
         <img src={assets.logo} className='w-28 lg:h-14 sm:h-8 bg-white' alt=''/>
         </NavLink>
         <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
-            <NavLink to="/" className="flex flex-col items-center gap-1">
+            <NavLink to="" className="flex flex-col items-center gap-1">
                 <p>HOME</p>
                 <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden'></hr>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
                 {token &&
                 <div className='group-hover:block hidden absolute dropdown-menu right-0'>
                     <div className='flex flex-col gap-2 w-36 py-3 bg-slate-100'>
-                        <p onClick={()=>navigate("/")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Admin Panel</p>
+                        <p onClick={()=>navigate("https://buyease-admin-site.vercel.app")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Admin Panel</p>
                         <p onClick={()=>navigate("/orders")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Orders</p>
                         <p onClick={logout} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Logout</p>
                     </div>
