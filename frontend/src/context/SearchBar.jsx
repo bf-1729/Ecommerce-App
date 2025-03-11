@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { assets } from '../assets/assets';
 import { useLocation } from 'react-router-dom';
 import { ShopContext } from './ShopContext';
+import { assets } from '../assets/assets';
 
 const SearchBar = () => {
-    const {search,setSearch,showSearch,setShowSearch} = useContext(ShopContext);
+    const {search,setSearch} = useContext(ShopContext);
     const [visible,setVisible] = useState(false)
     const location = useLocation();
 
     useEffect(()=>{
-      if(location.pathname.includes("collection")){
+      if(location.pathname.includes("collection") || location.pathname.includes("womenswear") || location.pathname.includes("kidswear")){
         setVisible(true);
 
       }
@@ -18,15 +18,21 @@ const SearchBar = () => {
       }
     },[location])
 
-  return showSearch && visible ?   (
-    <div className='border-t border-b bg-gray-50 text-center mt-20'>
-    <div className='inline-flex items-center justify-center border border-gray-400 px-5 py-2 my-5 mx-3 rounded-full w-3/4 sm:w-1/2'>
-       <input value={search} onChange={(e)=>setSearch(e.target.value)} className='flex-1 outline-none bg-inherit text-sm' type='text' placeholder='Search' ></input>
-       <img src={assets.search_icon} className='w-4' alt=''></img>
-    </div>
-    <img src={assets.cross_icon} className='inline w-3 cursor-pointer' onClick={()=>setShowSearch(false)}></img>
-    </div>
-  ) : null
+  return (
+    <div className='w-full bg-gray-100 pb-4 pt-1'>
+    <div className='flex items-center mx-auto border-2 border-slate-400 px-4 lg:w-[500px] w-[440px] rounded-3xl bg-white mt-4 lg:py-1'>
+  <img src={assets.search_icon} className='w-9 cursor-pointer border-r-2 py-2 border-gray-400 px-2' alt=''></img>
+  <input 
+    value={search} 
+    onChange={(e) => setSearch(e.target.value)} 
+    className='w-full outline-none px-4' 
+    type='text' 
+    placeholder='Search...'
+  />
+  </div>
+</div>
+
+  )
 }
 
 export default SearchBar

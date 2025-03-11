@@ -2,16 +2,20 @@ import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import { Link } from 'react-router-dom';
 
-const ProductItem = ({id,image,name,price}) => {
-    const {currency} = useContext(ShopContext);
+const ProductItem = ({ id, image, name, company, price }) => {
+  const { currency } = useContext(ShopContext);
   return (
-    <Link className='text-gray-700 cursor-pointer' to={`/products/${id}`}>
+    <Link className='text-gray-700 cursor-pointer lg:px-1 px-2' to={`/products/${id}`}>
+
+      <div className="rounded-lg">
         <div className='overflow-hidden'>
-            <img src={image[0]} className='w-[190px] h-[230px] hover:scale-110 transition ease-in-out' alt=''>
-            </img>
+          <img src={image[0]} className='hover:scale-110 transition ease-in-out lg:w-[240px] w-[240px] h-[260px] lg:h-[280px] object-cover' alt=''>
+          </img>
         </div>
-        <p className='pt-3 pb-1 text-sm'>{name}</p>
-        <p className='text-sm font-medium'>{currency}{price}</p>
+        <p className="mt-2 text-md text-gray-500 font-semibold capitalize">{company}</p>
+        <p className="text-sm tracking-wide first-letter:capitalize">{name}</p>
+        <p className="text-gray-600">{currency}{price}</p>
+      </div>
     </Link>
   )
 }

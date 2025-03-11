@@ -11,6 +11,7 @@ const Add = ({token}) => {
     const [image3,setImage3] = useState(false)
     const [image4,setImage4] = useState(false)
 
+    const [company,setCompany] = useState("")
     const [name,setName] = useState("")
     const [description,setDescription] = useState("")
     const [price,setPrice] = useState("")
@@ -23,6 +24,7 @@ const Add = ({token}) => {
         e.preventDefault();
         try{
             const formData = new FormData();
+            formData.append("company",company)
             formData.append("name",name)
             formData.append("description",description)
             formData.append("price",price)
@@ -39,6 +41,7 @@ const Add = ({token}) => {
             const response = await axios.post(backendUrl + "/api/product/add",formData,{headers:{token}})
             if(response.data.success){
                 toast.success(response.data.message)
+                setCompany('')
                 setName('')
                 setDescription('')
                 setImage1(false)
@@ -80,6 +83,10 @@ const Add = ({token}) => {
             </div>
         </div>
         <div className='w-full'>
+            <p className='mb-2'>Brand name</p>
+            <input onChange={(e)=>setCompany(e.target.value)} value={company} className='w-full max-w-[500px] px-3 py-2' type='text' placeholder='Type here'></input>
+        </div>
+        <div className='w-full'>
             <p className='mb-2'>Product name</p>
             <input onChange={(e)=>setName(e.target.value)} value={name} className='w-full max-w-[500px] px-3 py-2' type='text' placeholder='Type here'></input>
         </div>
@@ -116,6 +123,9 @@ const Add = ({token}) => {
             <div>
                 <p className='mb-2'>Product sizes</p>
                 <div className='flex gap-3'>
+                <div onClick={()=>setSizes(prev=>prev.includes("XS") ? prev.filter(item=>item !== "XS") : [...prev,"XS"])}>
+                        <p className={`${sizes.includes("XS")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XS</p>
+                    </div>
                     <div onClick={()=>setSizes(prev=>prev.includes("S") ? prev.filter(item=>item !== "S") : [...prev,"S"])}>
                         <p className={`${sizes.includes("S")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>S</p>
                     </div>
@@ -130,6 +140,9 @@ const Add = ({token}) => {
                     </div>
                     <div onClick={()=>setSizes(prev=>prev.includes("XXL") ? prev.filter(item=>item !== "XXL") : [...prev,"XXL"])}>
                         <p className={`${sizes.includes("XXL")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XXL</p>
+                    </div>
+                    <div onClick={()=>setSizes(prev=>prev.includes("XXXL") ? prev.filter(item=>item !== "XXXL") : [...prev,"XXXL"])}>
+                        <p className={`${sizes.includes("XXXL")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XXXL</p>
                     </div>
                 </div>
         </div>

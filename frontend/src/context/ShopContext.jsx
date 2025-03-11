@@ -148,8 +148,12 @@ const ShopContextProvider = (props) => {
         }
     }, [cartItems])
 
+    const MensProducts = products.filter(item=>item.category.includes("Men"))
+    const WomensProducts = products.filter(item=>item.category.includes("Women"))
+    const KidsProducts = products.filter(item=>item.category.includes("Kids"))
+
     const value = {
-        products, currency, delivery_fee,
+        MensProducts,WomensProducts,KidsProducts,products, currency, delivery_fee,
         search, setSearch, showSearch, setShowSearch,
         cartItems, addToCart,setCartItems,
         getCartCount, updateQuantity,

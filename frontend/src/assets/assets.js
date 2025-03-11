@@ -73,6 +73,7 @@ import contact_img from './contact_img.png'
 import razorpay_logo from './razorpay_logo.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import home from "./home.png"
 
 export const assets = {
     logo,
@@ -92,7 +93,8 @@ export const assets = {
     contact_img,
     razorpay_logo,
     stripe_logo,
-    cross_icon
+    cross_icon,
+    home
 }
 
 export const products = [
@@ -233,7 +235,6 @@ export const products = [
         name: "Men Round Neck Pure Cotton T-shirt",
         description: "A lightweight, usually knitted, pullover shirt, close-fitting and with a round neckline and short sleeves, worn as an undershirt or outer garment.",
         price: 150,
-        image: [p_img12],
         category: "Men",
         subCategory: "Topwear",
         sizes: ["S", "M", "L", "XL"],

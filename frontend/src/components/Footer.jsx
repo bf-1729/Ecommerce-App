@@ -9,7 +9,7 @@ const Footer = () => {
                 <img src={assets.logo} className='mb-5 w-32' alt=''>
                 </img>
                 <p className='w-full  md:w-2/3 text-gray-600'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius optio illo, modi quia ullam temporibus dolores harum ipsum voluptatem cumque delectus, fugiat, odit nobis sequi asperiores reiciendis ad ratione?</p>
+                BuyEase is a seamless and user-friendly eCommerce platform designed to provide a hassle-free shopping experience. Whether you're looking for the latest fashion trends, or everyday essentials, BuyEase has it all in one place.</p>
             </div>
             <div>
                 <p className='text-xl font-medium mb-5'>COMPANY</p>
@@ -24,12 +24,12 @@ const Footer = () => {
                 <p className='text-xl font-mediun mb-5'>GET IN TOUCH</p>
                 <ul className='flex flex-col gap-1 text-gray-600'>
                     <li>+91 7995906671</li>
-                    <li>contact@foreveryou.com</li>
+                    <li>contact@buyease.com</li>
                 </ul>
             </div>
             <div>
                 <hr></hr>
-                <p className='py-5 text-sm text-center'>Copyright 2024@ forever.com - All Rights Reserved.</p>
+                <p className='py-5 text-sm text-center'>Copyright 2024@buyease.com - All Rights Reserved.</p>
             </div>
 
         </div>

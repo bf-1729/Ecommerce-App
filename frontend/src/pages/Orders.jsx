@@ -1,88 +1,112 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { ShopContext } from '../context/ShopContext'
-import Title from '../components/Title';
-import axios from "axios"
-import { toast } from 'react-toastify';
+import React, { useContext, useEffect, useState, useCallback } from "react";
+import { ShopContext } from "../context/ShopContext";
+import Title from "../components/Title";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const Orders = () => {
-  const { backendUrl, currency,token } = useContext(ShopContext);
+  const { backendUrl, currency, token } = useContext(ShopContext);
+  const [orderData, setOrderData] = useState([]);
 
-  const [orderData,setOrderData] = useState([])
+  const loadOrderData = useCallback(async () => {
+    if (!token) return;
 
-  const loadOrderData = async()=>{
     try {
-      if(!token){
-        return null;
-      }
+      const response = await axios.post(
+        `${backendUrl}/api/order/userorders`,
+        {},
+        { headers: { token } }
+      );
 
-      const response = await axios.post(backendUrl+"/api/order/userorders",{},{headers:{token}})
-      if(response.data.success){
-        let allOrdersItem = []
-        response.data.orders.map((order)=>{
-          order.items.map((item)=>{
-            item['status'] = order.status
-            item['payment'] = order.payment
-            item['paymentMethod'] = order.paymentMethod
-            item['date'] = order.date
-            allOrdersItem.push(item)
-
-          })
-        })
-        setOrderData(allOrdersItem.reverse())
-        
+      if (response.data.success) {
+        const allOrdersItem = response.data.orders.flatMap((order) =>
+          order.items.map((item) => ({
+            ...item,
+            status: order.status,
+            payment: order.payment,
+            paymentMethod: order.paymentMethod,
+            date: order.date,
+          }))
+        );
+        setOrderData(allOrdersItem.reverse());
       }
-      
-      
     } catch (error) {
-      console.log(error);
-      toast.error(error.message)
-      
+      console.error(error);
+      toast.error(error.response?.data?.message || "Failed to load orders");
     }
-  }
+  }, [backendUrl, token]);
 
-  useEffect(()=>{
-    loadOrderData()
-  },[token])
+  useEffect(() => {
+    if (token) {
+      loadOrderData();
+    }
+  }, [token, loadOrderData]);
+
   return (
-    <div className='border-t pt-8 mt-20'>
-      <div className='text-2xl'>
-        <Title text1={'MY'} text2={'ORDERS'} />
+    <div className="max-w-7xl mx-auto px-4 mt-24">
+      <div className="text-2xl lg:ml-0 -ml-3">
+        <Title text1="MY" text2="ORDERS" />
       </div>
-      <div>
-        {
-          orderData.map((item, index) => (
-            <div className='py-2 border-t border-b text-gray-700 flex flex-col md:flex-row md:items-center md:justify-between gap-6' key={index}>
-              <div className='flex items-start gap-6 text-sm'>
-                <img src={item.image[0]} alt='' className='w-16 sm:w-20'></img>
 
+      {orderData.length === 0 ? (
+        <p className="text-center text-gray-500 py-8">No orders found.</p>
+      ) : (
+        <div className="grid">
+          {orderData.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md rounded-md lg:p-5 p-4 flex flex-col md:flex-row items-center justify-between border border-gray-200"
+            >
+              {/* Product Details */}
+              <div className="flex items-center gap-4 w-full md:w-2/5">
+                <img
+                  src={item.image?.[0] || "/placeholder.jpg"}
+                  alt={item.name}
+                  className="w-20 h-20 object-cover rounded-lg shadow-md"
+                />
                 <div>
-                  <p className='sm:text-base font-medium'>{item.name}</p>
-                  <div className='flex items-center gap-3 mt-2 text-base text-gray-700'>
-                    <p className='text-md'>{currency}{item.price}</p>
-                    <p>Quantity : {item.quantity}</p>
-                    <p>Size: {item.size}</p>
-                  </div>
-                  <p className='mt-1'>Date: <span className='text-gray-400'>{new Date(item.date).toDateString()}</span></p>
-                  <p className='mt-1'>Payment: <span className='text-gray-400'>{item.paymentMethod}</span></p>
-
+                  <p className="lg:text-lg text-md">{item.name}</p>
+                  <p className="text-gray-600 text-sm">
+                    {currency}
+                    {item.price} • Qty: {item.quantity} • Size: {item.size}
+                  </p>
+                  <p className="text-gray-500 text-sm mt-1">
+                    Ordered on: {new Date(item.date).toDateString()}
+                  </p>
                 </div>
               </div>
-              <div className='md:w-1/2 flex justify-between'>
-                <div className='flex items-center gap-2'>
-                  <p className='min-w-2 h-2 rounded-full bg-green-500'></p>
-                  <p className='text-sm md:text-base'>{item.status}</p>
-                </div>
-                <button onClick={loadOrderData} className='border px-4 py-2 text-sm font-medium rounded-sm lg:hover:bg-gray-400'>
-                  Track Order
-                </button>
+
+              {/* Status & Payment */}
+              <div className="w-full md:w-1/4  md:text-left">
+                <span
+                  className={`px-3 py-1 text-xs font-medium rounded-full ${
+                    item.status === "Delivered"
+                      ? "bg-green-100 text-green-600"
+                      : item.status === "Shipped"
+                      ? "bg-blue-100 text-blue-600"
+                      : "bg-yellow-100 text-yellow-600"
+                  }`}
+                >
+                  {item.status}
+                </span>
+                <p className="text-gray-600 text-sm mt-2">
+                  Payment: {item.paymentMethod}
+                </p>
               </div>
 
+              {/* Track Order Button */}
+              <button
+                onClick={loadOrderData}
+                className="bg-blue-500 lg:ml-0 ml-72 lg:mt-0 -mt-10 text-white px-5 py-2 text-sm font-medium rounded-md shadow hover:bg-blue-600 transition-all"
+              >
+                Track Order
+              </button>
             </div>
-          ))
-        }
-      </div>
+          ))}
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Orders
+export default Orders;

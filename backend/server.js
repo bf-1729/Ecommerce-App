@@ -10,17 +10,14 @@ import connectCloudinary from "./config/cloudinary.js";
 
 dotenv.config();
 
-// App config
 const app = express();
 const port = process.env.PORT || 4000;
 connectDB();
-connectCloudinary();  // ✅ Call function properly
+connectCloudinary();
 
-// Middlewares
 app.use(express.json());
 app.use(cors({ origin: "*", credentials: true }));
 
-// API endpoints
 app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
@@ -34,5 +31,4 @@ app.listen(port, () => {
   console.log("Server started on port: " + port);
 });
 
-// ✅ Replace `module.exports = app;` with:
 export default app;

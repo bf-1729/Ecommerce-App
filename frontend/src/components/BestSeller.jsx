@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title';
-import ProductItem from './ProductItem';
+import HomeProduct from '../pages/HomeProduct';
 
 const BestSeller = () => {
     const {products} = useContext(ShopContext);
@@ -19,10 +19,10 @@ const BestSeller = () => {
             Discover the top-rated and most popular products loved by our customers. Don’t miss out on these must-haves!</p>
 
         </div>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-6 lg:p-0 p-2'>
             {
                 bestSeller.map((item,index)=>(
-                    <ProductItem key={index} id={item._id} name={item.name} image={item.image} price={item.price}/>
+                    <HomeProduct key={index} id={item._id} name={item.name} company={item.company} image={item.image} price={item.price}/>
                 ))
             }
         </div>

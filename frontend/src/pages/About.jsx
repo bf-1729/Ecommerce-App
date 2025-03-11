@@ -1,43 +1,58 @@
-import React from 'react'
-import Title from '../components/Title'
-import { assets } from '../assets/assets'
-import NewsletterBox from '../components/NewsletterBox'
+import React from "react";
+import { ShoppingCart, Search, User } from "lucide-react";
 
-const About = () => {
+export default function About() {
   return (
-    <div>
-      <div className='text-2xl text-center pt-8 border-t mt-20'>
-        <Title text1={'ABOUT'} text2={'US'}/>
-      </div>
-      <div className='flex flex-col md:flex-row gap-16'>
-        <img src={assets.about_img} className='w-full md:max-w-[450px]' alt=''></img>
-        <div className='flex flex-col justify-center gap-6 ms:w-2/4 text-gray-600'>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, error eum! Qui sequi, sed consectetur mollitia praesentium et maiores autem placeat explicabo voluptate saepe fuga deserunt nobis dolor excepturi doloribus!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia placeat debitis dolor impedit odit numquam facere magnam fugit omnis unde iure illum maiores, doloremque totam dicta dolorum commodi velit nam!</p>
-        <b className='text-gray-800'>Our Mission</b>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores mollitia iusto praesentium dolor dicta ad alias molestias, voluptate beatae culpa facilis laudantium deleniti at, maxime aperiam laborum ab quia quas.</p>
+    <div className="min-h-screen bg-gray-100 mt-20">
+      {/* Navbar */}
+      <nav className="bg-white shadow-md p-4 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-blue-600">ShopEase</h1>
+        <div className="flex items-center gap-4">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search products..."
+              className="pl-10 pr-4 py-2 border rounded-lg"
+            />
+            <Search className="absolute left-3 top-2 text-gray-500" size={20} />
+          </div>
+          <button variant="outline">
+            <User className="mr-2" /> Login
+          </button>
+          <button variant="outline">
+            <ShoppingCart className="mr-2" /> Cart
+          </button>
         </div>
-      </div>
-      <div className='text-xl py-4'>
-        <Title text1={'WHY'} text2={'CHOOSE US'}/>
-      </div>
-      <div className='flex flex-col md:flex-row text-sm mb-20'>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Quality Assurance:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni accusantium explicabo ducimus asperiores molestiae. Similique, dolores qui ipsam mollitia maxime dolorem commodi a velit, magnam sequi id optio, itaque expedita!</p>
-        </div>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Convenience:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni accusantium explicabo ducimus asperiores molestiae. Similique, dolores qui ipsam mollitia maxime dolorem commodi a velit, magnam sequi id optio, itaque expedita!</p>
-        </div>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Exceptional Customer Service:</b>
-          <p className='text-gray-600'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni accusantium explicabo ducimus asperiores molestiae. Similique, dolores qui ipsam mollitia maxime dolorem commodi a velit, magnam sequi id optio, itaque expedita!</p>
-        </div>
-      </div>
-      <NewsletterBox/>
-    </div>
-  )
-}
+      </nav>
 
-export default About
+      {/* Hero Section */}
+      <header className="relative bg-blue-500 text-white text-center py-16 px-4">
+        <h2 className="text-4xl font-bold">Discover Amazing Deals</h2>
+        <p className="mt-2 text-lg">Shop the latest trends at unbeatable prices.</p>
+        <button className="mt-4 bg-white text-blue-600 px-6 py-3 font-semibold rounded-lg">
+          Shop Now
+        </button>
+      </header>
+
+      {/* Featured Products */}
+      <section className="p-2">
+        <h3 className="text-2xl font-semibold text-gray-800">Featured Products</h3>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+          {[1, 2, 3, 4].map((item) => (
+            <div key={item} className="bg-white p-4 rounded-lg shadow-md">
+              <div className="h-56 bg-gray-300 rounded-lg"></div>
+              <h4 className="mt-2 text-lg font-semibold">Product {item}</h4>
+              <p className="text-gray-600">$99.99</p>
+              <button className="mt-2 w-full">Add to Cart</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-6 mt-10">
+        <p>&copy; 2025 ShopEase. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+}
