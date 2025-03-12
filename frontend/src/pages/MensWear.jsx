@@ -112,7 +112,7 @@ const MensWear = () => {
       <SearchBar/>
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
         
-        <div className="min-w-60 lg:pl-0 pl-3">
+        <div className="min-w-60 lg:pl-0 pl-1.5">
           <p onClick={() => setShowFilter(!showFilter)}
             className="text-xl flex items-center cursor-pointer gap-2"
           >
@@ -178,7 +178,7 @@ const MensWear = () => {
         </div>
 
         <div className="flex-1">
-          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-1 pr-2">
+          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-1 pr-1">
             <Title text1={"MENS"} text2={"COLLECTIONS"} />
 
             <select onChange={(e) => setSortType(e.target.value)}
@@ -189,10 +189,10 @@ const MensWear = () => {
             </select>
           </div>
 
-          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 px-1 w-full">
+          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 px-0 w-full">
             {filterProducts.length ? (filterProducts.slice(start, end).map((item, index) => (
               <ProductItem key={index} id={item._id} name={item.name} company={item.company} image={item.image} price={item.price} />))) 
-              : (<div className="flex items-center justify-center text-center text-3xl text-black font-extrabold h-[300px] lg:w-[900px] w-[500px]"><h1>No Items Found</h1></div>)}
+              : (<div className="flex items-center justify-center text-center text-3xl text-black font-extrabold h-fit lg:w-[900px] w-100"><h1>No Items Found</h1></div>)}
           </div>
           {filterProducts.length ? (
           <div className="flex gap-4 justify-center items-center mt-4">

@@ -108,11 +108,11 @@ const WomensWear = () => {
   }
 
   return (
-    <div className="mt-[72px] border-t">
+    <div className="mt-[64px] border-t">
       <SearchBar/>
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
         
-        <div className="min-w-60 lg:pl-0 pl-3">
+        <div className="min-w-60 lg:pl-0 pl-1.5">
           <p onClick={() => setShowFilter(!showFilter)}
             className="text-xl flex items-center cursor-pointer gap-2"
           >
@@ -178,8 +178,8 @@ const WomensWear = () => {
         </div>
 
         <div className="flex-1">
-          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-1 pr-2">
-            <Title text1={"MENS"} text2={"COLLECTIONS"} />
+          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-1 pr-1">
+            <Title text1={"WOMENS"} text2={"COLLECTIONS"} />
 
             <select onChange={(e) => setSortType(e.target.value)}
               className="border-2 border-gray-300 text-sm px-2">
@@ -189,7 +189,7 @@ const WomensWear = () => {
             </select>
           </div>
 
-          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2">
+          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 px-0 w-full">
             {filterProducts.length ? (filterProducts.slice(start, end).map((item, index) => (
               <ProductItem key={index} id={item._id} name={item.name} company={item.company} image={item.image} price={item.price} />))) 
               : (<div className="flex items-center justify-center text-center text-3xl text-black font-extrabold h-[300px] lg:w-[900px] w-[500px]"><h1>No Items Found</h1></div>)}

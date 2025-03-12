@@ -25,7 +25,7 @@ const SearchBar = () => {
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className='w-full outline-none px-4'
+          className='w-80 outline-none px-4'
           type='text'
           placeholder='Search...'
         />

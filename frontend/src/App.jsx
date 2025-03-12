@@ -21,7 +21,7 @@ export const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 const App = () => {
   return (
-    <div className='-4 sm:px-[5vw] md:px-[7vw] lg:px-[7vw]'>
+    <div className='px-1 sm:px-[5vw] md:px-[7vw] lg:px-[7vw]'>
       <ToastContainer/>
       <Navbar/>
       <Routes>
