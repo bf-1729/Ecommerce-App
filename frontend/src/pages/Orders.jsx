@@ -97,7 +97,7 @@ const Orders = () => {
               {/* Track Order Button */}
               <button
                 onClick={loadOrderData}
-                className="bg-blue-500 lg:ml-0 ml-72 lg:mt-0 -mt-10 text-white px-5 py-2 text-sm font-medium rounded-md shadow hover:bg-blue-600 transition-all"
+                className="bg-blue-500 text-nowrap lg:ml-0 ml-56 lg:mt-0 -mt-10 text-white px-5 py-2 text-sm font-medium rounded-md shadow hover:bg-blue-600 transition-all"
               >
                 Track Order
               </button>
