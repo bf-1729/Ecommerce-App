@@ -4,7 +4,7 @@ import BestSeller from '../components/BestSeller'
 import OurPolicy from '../components/OurPolicy'
 import NewsletterBox from '../components/NewsletterBox'
 import LatestMensCollection from '../components/LatestMensCollection'
-import LatestWomensCollection from '../components/LatestWomensCOllections'
+import LatestWomensCollection from '../components/LatestWomensCollections'
 import LatestKidsCollection from '../components/LatestKidsCollections'
 
 const Home = () => {
