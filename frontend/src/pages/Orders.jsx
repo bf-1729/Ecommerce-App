@@ -43,7 +43,7 @@ const Orders = () => {
   }, [token, loadOrderData]);
 
   return (
-    <div className="w-96 mx-auto px-4 mt-24">
+    <div className="w-96 mx-auto mt-24">
       <div className="text-2xl lg:ml-0 -ml-3">
         <Title text1="MY" text2="ORDERS" />
       </div>
