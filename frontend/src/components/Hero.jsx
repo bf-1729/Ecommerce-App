@@ -7,7 +7,7 @@ const Hero = () => {
     <header className="relative h-96 text-center flex flex-col items-center justify-center lg:mt-[127px] mt-20">
       {/* Background Image */}
       <img
-        className="border border-gray-400 absolute lg:w-[1200px] w-96 lg:h-[500px] h-[400px] object-cover"
+        className="border border-gray-400 absolute lg:w-[1200px] w-92 lg:h-[500px] h-[400px] object-cover"
         src={assets.home}
         alt="Hero Banner"
       />

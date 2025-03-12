@@ -108,7 +108,7 @@ const MensWear = () => {
   }
 
   return (
-    <div className="mt-[72px] border-t">
+    <div className="mt-[64px] border-t">
       <SearchBar/>
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
         
@@ -189,7 +189,7 @@ const MensWear = () => {
             </select>
           </div>
 
-          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2">
+          <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 px-1 w-full">
             {filterProducts.length ? (filterProducts.slice(start, end).map((item, index) => (
               <ProductItem key={index} id={item._id} name={item.name} company={item.company} image={item.image} price={item.price} />))) 
               : (<div className="flex items-center justify-center text-center text-3xl text-black font-extrabold h-[300px] lg:w-[900px] w-[500px]"><h1>No Items Found</h1></div>)}
