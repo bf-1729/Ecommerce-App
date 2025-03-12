@@ -78,12 +78,12 @@ const Orders = ({token}) => {
     <div>
       <h3 className='font-semibold'>Order Page</h3>
       <div className='lg:flex grid grid-cols-2 gap-x-0 justify-between'>
-      <p className='lg:text-md text-[14px]'>Total Orders:{orders.length}</p>
-      <p className='lg:text-md text-[14px]'>Orders Packed:{packed}</p>
-      <p className='lg:text-md text-[14px]'>Orders Shipped:{shipped}</p>
-      <p className='lg:text-md text-[14px] text-wrap'>Out for Delivery:{outforDelivery}</p>
-      <p className='lg:text-md text-[14px]'>Delivered:{delivered}</p>
-      <p className='lg:text-md text-[14px]'>Pending:{pending}</p>
+      <p className='lg:text-md text-sm'>Total Orders:{orders.length}</p>
+      <p className='lg:text-md text-sm'>Orders Packed:{packed}</p>
+      <p className='lg:text-md text-sm'>Orders Shipped:{shipped}</p>
+      <p className='lg:text-md text-sm text-wrap'>Out for Delivery:{outforDelivery}</p>
+      <p className='lg:text-md text-sm'>Delivered:{delivered}</p>
+      <p className='lg:text-md text-sm'>Pending:{pending}</p>
       </div>
       <div>
         {
