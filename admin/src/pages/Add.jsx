@@ -122,7 +122,7 @@ const Add = ({token}) => {
             </div>
             <div>
                 <p className='mb-2'>Product sizes</p>
-                <div className='flex gap-3'>
+                <div className='flex gap-2 flex-wrap'>
                 <div onClick={()=>setSizes(prev=>prev.includes("XS") ? prev.filter(item=>item !== "XS") : [...prev,"XS"])}>
                         <p className={`${sizes.includes("XS")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XS</p>
                     </div>

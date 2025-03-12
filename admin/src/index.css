@@ -8,21 +8,14 @@
 }
 
 .active{
-    background-color: #685755;
-    border-color: #C586A5;
+    background-color: #fbd6d2;
     color: white;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
 }
 
 select,input,textarea{
     border: 1px solid #c2c2c2;
     outline-color: #C586A5;
     border-radius: 4px;
-}
-
-@media(max-width:768px){
-    .active{
-        background-color: #c7b7b5;
-        border-color: #C586A5;
-        color: white;
-    } 
 }
