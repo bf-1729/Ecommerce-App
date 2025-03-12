@@ -7,7 +7,7 @@ const Sidebar = () => {
   const [showFilter, setShowFilter] = useState(false);
 
   return (
-    <div className="w-[14%] sm:w-52 min-h-screen text-black shadow-md overflow-hidden">
+    <div className="w-[15%] sm:w-52 min-h-screen text-black shadow-md overflow-hidden">
       <div className="flex flex-col gap-4 pt-8 px-4">
 
         <NavLink
@@ -37,19 +37,19 @@ const Sidebar = () => {
           >
             <NavLink
               to="/menslist"
-              className="block text-sm text-black lg:w-full w-[54px] px-1 py-1 cursor-pointer"
+              className="block text-sm text-black lg:w-full w-[58px] px-1 py-1 cursor-pointer"
             >
               Men
             </NavLink>
             <NavLink
               to="/womenslist"
-              className="block text-sm text-black lg:w-full w-[54px] px-1 py-1 cursor-pointer"
+              className="block text-sm text-black lg:w-full w-[58px] px-1 py-1 cursor-pointer"
             >
               Women
             </NavLink>
             <NavLink
               to="/kidslist"
-              className="block text-sm text-black lg:w-full w-[54px] px-1 py-1 cursor-pointer"
+              className="block text-sm text-black lg:w-full w-[58px] px-1 py-1 cursor-pointer"
             >
               Kids
             </NavLink>
