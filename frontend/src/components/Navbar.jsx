@@ -42,7 +42,7 @@ const Navbar = () => {
                 {token &&
                 <div className='group-hover:block hidden absolute dropdown-menu right-0'>
                     <div className='flex flex-col gap-2 w-36 py-3 bg-slate-100'>
-                        <a href='http://localhost:5174' className='px-4 cursor-pointer hover:text-white hover:bg-black'>Admin Panel</a>
+                        <a href='https://buyease-admin.vercel.app' className='px-4 cursor-pointer hover:text-white hover:bg-black'>Admin Panel</a>
                         <p onClick={()=>navigate("/orders")} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Orders</p>
                         <p onClick={logout} className='px-4 cursor-pointer hover:text-white hover:bg-black'>Logout</p>
                     </div>
