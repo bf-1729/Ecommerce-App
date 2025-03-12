@@ -20,7 +20,7 @@ const Sidebar = () => {
         <div className="w-full">
           <button
             onClick={() => setShowFilter(!showFilter)}
-            className="flex items-center justify-around w-10 gap-1 sm:w-full py-3 sm:px-5 ml-1 lg:ml-0 rounded-md transition duration-300"
+            className="flex items-center justify-around w-10 gap-1 sm:w-full py-3 sm:px-5 ml-1 lg:-ml-1 rounded-md transition duration-300"
           >
             <div className="flex items-center gap-2">
             <img className="w-7 h-7" src="https://img.icons8.com/ios-glyphs/50/list--v1.png" alt="list--v1"/>
