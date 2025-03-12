@@ -43,8 +43,8 @@ const Orders = () => {
   }, [token, loadOrderData]);
 
   return (
-    <div className="w-96 mx-auto mt-24">
-      <div className="text-2xl lg:ml-0 -ml-3">
+    <div className="w-96 mx-auto mt-24 px-1">
+      <div className="text-2xl">
         <Title text1="MY" text2="ORDERS" />
       </div>
 
@@ -55,7 +55,7 @@ const Orders = () => {
           {orderData.map((item, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-md lg:p-5 p-4 flex flex-col md:flex-row items-center justify-between border border-gray-200"
+              className="bg-white shadow-md rounded-md lg:p-5 p-3 flex flex-col md:flex-row items-center justify-between border border-gray-200"
             >
               {/* Product Details */}
               <div className="flex items-center gap-4 w-full md:w-2/5">
