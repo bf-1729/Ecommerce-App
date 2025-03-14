@@ -46,7 +46,7 @@ const Kids = ({ token }) => {
         fetchList()
     }, [])
     return (
-        <div className='sm:w-full w-[100%] overflow-x-hidden'>
+        <div className='sm:w-full w-fit overflow-x-hidden'>
             <p className='flex flex-row justify-between mb-2'>
                 <p>All Products</p>
                 <p>Items: {KidsList.length}</p>

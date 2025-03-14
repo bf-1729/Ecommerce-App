@@ -50,7 +50,7 @@ const Sidebar = () => {
               to="/kidslist"
               className="block text-sm text-black lg:w-full w-[70px] px-1 py-1 cursor-pointer"
             >
-              Kids
+              Kid
             </NavLink>
           </div>
         </div>

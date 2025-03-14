@@ -38,7 +38,7 @@ const App = () => {
             <hr />
             <div className='flex w-full'>
               <Sidebar />
-              <div className='w-[70%] mx-auto ml-[max(5vw,25px)] my-8 text-gray-800 text-base'>
+              <div className='w-[70%] mx-auto ml-[max(4vw,18px)] my-8 text-gray-800 text-base'>
                 <Routes>
                   <Route path='/add' element={<Add token={token} />}></Route>
                   <Route path='/edititem/:itemId' element={<EditPizza/>}></Route>
