@@ -46,11 +46,11 @@ const Mens = ({token}) => {
         fetchList()
     },[])
   return (
-    <div className='sm:w-full w-fit overflow-x-hidden'>
-    <p className='flex flex-row justify-between mb-2'>
+    <div className='sm:w-full w-[98%] overflow-x-hidden'>
+    <div className='flex flex-row justify-between mb-2'>
         <p>All Products</p>
         <p>Items: {MensList.length}</p>
-    </p>
+    </div>
     <div className='flex flex-col gap-2'>
         <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
         <b>Image</b>
