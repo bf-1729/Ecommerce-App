@@ -46,7 +46,7 @@ const Mens = ({token}) => {
         fetchList()
     },[])
   return (
-    <div className='sm:w-full w-84 overflow-x-hidden'>
+    <div className='sm:w-full w-92 overflow-x-hidden'>
     <div className='flex flex-row justify-between mb-2'>
         <p>All Products</p>
         <p>Items: {MensList.length}</p>
