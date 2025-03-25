@@ -46,7 +46,7 @@ const Mens = ({token}) => {
         fetchList()
     },[])
   return (
-    <div className='sm:w-full w-92 overflow-x-hidden'>
+    <div className='sm:w-full w-fit overflow-x-hidden'>
     <div className='flex flex-row justify-between mb-2'>
         <p>All Products</p>
         <p>Items: {MensList.length}</p>
@@ -60,11 +60,11 @@ const Mens = ({token}) => {
         </div>
         {
             MensList.map((item,index)=>(
-                <div className='grid grid-cols-[0.3fr_1fr] sm:grid-cols-[1fr_3.1fr_1.1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-300 text-sm product-item ${highlightedId === item._id ? "highlight" : ""}' key={index}>
+                <div className='grid grid-cols-[0.5fr_1fr] sm:grid-cols-[1fr_3.1fr_1.1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-300 text-sm product-item ${highlightedId === item._id ? "highlight" : ""}' key={index}>
                     <img className='w-14' src={item.image[0]} alt=''></img>
                     <p className='break-all text-sm sm:text-md'>{item.name}</p>
                     <p>{currency}{item.price}</p>
-                    <p className='flex text-right lg:ml-0 ml-48 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
+                    <p className='flex text-right lg:ml-0 ml-40 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
                         <img className='lg:w-5 w-4 lg:h-5 h-4' onClick={()=>removeProduct(item._id)} src="https://img.icons8.com/material-rounded/24/trash.png" alt="trash"/>
                         <Link to={`/edititem/${item._id}`}>
                         <img className='lg:w-5 w-4 lg:h-5 h-4' src="https://img.icons8.com/ios-glyphs/24/edit--v1.png" alt="edit--v1"/>
