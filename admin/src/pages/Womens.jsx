@@ -54,7 +54,6 @@ const Womens = ({ token }) => {
                 <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
                     <b>Image</b>
                     <b>Name</b>
-                    <b>Category</b>
                     <b>Price</b>
                     <b className='text-center'>Action</b>
                 </div>
@@ -63,7 +62,6 @@ const Womens = ({ token }) => {
                         <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
                             <img className='w-12' src={item.image[0]} alt=''></img>
                             <p>{item.name}</p>
-                            <p>{item.category}</p>
                             <p>{currency}{item.price}</p>
                             <p className='flex text-right lg:ml-0 ml-48 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
                                 <img className='lg:w-5 w-4 lg:h-5 h-4' onClick={() => removeProduct(item._id)} src="https://img.icons8.com/material-rounded/24/trash.png" alt="trash" />
