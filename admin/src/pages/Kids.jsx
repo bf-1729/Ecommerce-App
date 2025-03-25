@@ -61,7 +61,7 @@ const Kids = ({token}) => {
         {
             KidsList.map((item,index)=>(
                 <div className='grid grid-cols-[0.2fr_1fr] sm:grid-cols-[1fr_3.1fr_1.1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-300 text-sm product-item ${highlightedId === item._id ? "highlight" : ""}' key={index}>
-                    <img className='w-13' src={item.image[0]} alt=''></img>
+                    <img className='w-13 sm:w-12' src={item.image[0]} alt=''></img>
                     <p className='break-all text-[13px] sm:text-md'>{item.name}</p>
                     <p>{currency}{item.price}</p>
                     <p className='flex text-right lg:ml-0 ml-44 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
