@@ -52,7 +52,7 @@ const Mens = ({token}) => {
         <p>Items: {MensList.length}</p>
     </div>
     <div className='flex flex-col gap-2'>
-        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
+        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
         <b>Image</b>
         <b>Name</b>
         <b>Price</b>
@@ -60,7 +60,7 @@ const Mens = ({token}) => {
         </div>
         {
             MensList.map((item,index)=>(
-                <div className='grid grid-cols-[1fr_3fr_1fr] sm:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-300 text-sm product-item ${highlightedId === item._id ? "highlight" : ""}' key={index}>
+                <div className='grid grid-cols-[0.3fr_1fr] sm:grid-cols-[1fr_3.1fr_1.1fr_1fr] items-center gap-2 py-1 px-2 border border-gray-300 text-sm product-item ${highlightedId === item._id ? "highlight" : ""}' key={index}>
                     <img className='w-12' src={item.image[0]} alt=''></img>
                     <p className='break-all'>{item.name}</p>
                     <p>{currency}{item.price}</p>
