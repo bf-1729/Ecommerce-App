@@ -64,7 +64,7 @@ const Mens = ({token}) => {
                     <img className='w-13 sm:w-12' src={item.image[0]} alt=''></img>
                     <p className='break-all text-[13px] sm:text-md'>{item.name}</p>
                     <p>{currency}{item.price}</p>
-                    <p className='flex text-right lg:ml-0 ml-44 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
+                    <p className='flex text-right lg:ml-0 ml-40 lg:justify-center gap-2 md:text-center cursor-pointer text-lg w-full'>
                         <img className='lg:w-5 w-4 lg:h-5 h-4' onClick={()=>removeProduct(item._id)} src="https://img.icons8.com/material-rounded/24/trash.png" alt="trash"/>
                         <Link to={`/edititem/${item._id}`}>
                         <img className='lg:w-5 w-4 lg:h-5 h-4' src="https://img.icons8.com/ios-glyphs/24/edit--v1.png" alt="edit--v1"/>
