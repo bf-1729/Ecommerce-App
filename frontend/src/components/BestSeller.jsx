@@ -9,10 +9,10 @@ const BestSeller = () => {
 
     useEffect(()=>{
         const bestProduct = products.filter((item)=>(item.bestSeller))
-        setBestSeller(bestProduct.slice(0,5))
+        setBestSeller(bestProduct.slice(0,10))
     },[products])
   return (
-    <div className='my-10'>
+    <div className='my-16'>
         <div className='text-center text-3xl lg:py-10 py-4'>
             <Title text1={'BEST'} text2={'SELLERS'}/>
             <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>

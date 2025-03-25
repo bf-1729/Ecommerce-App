@@ -9,7 +9,7 @@ const HomeProduct = ({ id, name, image, price, company }) => {
     <Link className='text-gray-700 cursor-pointer' to={`/products/${id}`}>
       <div className="bg-white px-1 rounded-lg">
         <div className='overflow-hidden'>
-          <img src={image[0]} className='w-[230px] h-[270px] hover:scale-110 transition ease-in-out object-cover' alt=''>
+          <img src={image[0]} className='w-[230px] h-[250px] hover:scale-110 transition ease-in-out object-cover' alt=''>
           </img>
           <p className="mt-2 text-md text-gray-500 font-semibold capitalize">{company}</p>
           <p className="text-sm tracking-wide first-letter:capitalize">{name}</p>

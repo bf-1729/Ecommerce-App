@@ -74,7 +74,7 @@ const EditPizza = ({ token }) => {
         axios.post(backendUrl + "/api/product/edititem", {editItem})
         .then((response) => {
             if (response.data.success) {
-                toast.success("Item edited successfully")
+                toast.success("Product Updated Successfully")
             } else {
                 toast.error("Failed to update Item")
             }
@@ -155,6 +155,9 @@ const EditPizza = ({ token }) => {
             <div>
                 <p className='mb-2'>Product sizes</p>
                 <div className='flex gap-3'>
+                <div onClick={()=>setSizes(prev=>prev.includes("XS") ? prev.filter(item=>item !== "XS") : [...prev,"XS"])}>
+                        <p className={`${sizes.includes("XS")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XS</p>
+                    </div>
                     <div onClick={()=>setSizes(prev=>prev.includes("S") ? prev.filter(item=>item !== "S") : [...prev,"S"])}>
                         <p className={`${sizes.includes("S")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>S</p>
                     </div>
@@ -169,6 +172,9 @@ const EditPizza = ({ token }) => {
                     </div>
                     <div onClick={()=>setSizes(prev=>prev.includes("XXL") ? prev.filter(item=>item !== "XXL") : [...prev,"XXL"])}>
                         <p className={`${sizes.includes("XXL")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XXL</p>
+                    </div>
+                    <div onClick={()=>setSizes(prev=>prev.includes("XXXL") ? prev.filter(item=>item !== "XXXL") : [...prev,"XXXL"])}>
+                        <p className={`${sizes.includes("XXXL")?"bg-teal-400":"bg-slate-200"} rounded-sm px-4 py-1 cursor-pointer`}>XXXL</p>
                     </div>
                 </div>
         </div>

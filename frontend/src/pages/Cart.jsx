@@ -4,6 +4,7 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { products, currency, cartItems, updateQuantity, navigate } =
@@ -60,7 +61,13 @@ const Cart = () => {
 
       <div className="lg:flex">
         <div>
-          {cartData.map((item, index) => {
+          {cartData.length === 0 ?
+          <div className="h-28 sm:h-[100px] w-88 sm:w-[1200px] flex flex-col items-center justify-center sm:gap-4">
+          <h1 className="font-semibold sm:text-2xl text-lg text-gray-400">Your Cart is Empty
+            </h1>
+            <Link to={"/"} className="text-blue-400">Shop Now</Link>
+            </div>:
+          cartData.map((item, index) => {
             const productData = products.find(
               (product) => product._id === item._id
             );

@@ -16,7 +16,7 @@ const LatestKidsCollection = () => {
         <div className='text-center py-8 text-3xl'>
             <Title text1={'NEW'} text2={'KIDS WEAR'}/>
             <p className='w-3/4 m-auto text-sm sm:text-sm md:text-base text-gray-600'>
-            We bring you the freshest designs straight from the trendsetters. Upgrade your fashion game today.</p>
+            Dress your little ones in style with our latest collection of trendy and comfy kids' fashion.</p>
         </div>
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-6 lg:p-0 p-1'>
             {
