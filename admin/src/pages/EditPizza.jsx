@@ -93,7 +93,7 @@ const EditPizza = ({ token }) => {
     
     return (
         <div>
-        <form className='flex flex-col w-full items-start gap-3'>
+        <form className='flex flex-col w-full lg:ml-44 ml-[24%] mt-12 items-start gap-3'>
             
             <div className='w-full'>
                 <p className='mb-2'>Brand name</p>
