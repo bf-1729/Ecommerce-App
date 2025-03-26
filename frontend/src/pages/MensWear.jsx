@@ -179,7 +179,7 @@ const MensWear = () => {
 
         <div className="flex-1">
           <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-0 pr-1">
-            <Title text1={"MENS"} text2={"COLLECTIONS"} />
+            <Title text1={"MENS"} text2={"COLLECTION"} />
 
             <select onChange={(e) => setSortType(e.target.value)}
               className="border-2 border-gray-300 text-sm px-2">
