@@ -19,7 +19,7 @@ const SearchBar = () => {
   }, [location])
 
   return (
-    <div className='w-full bg-gray-100 pb-4 pt-0.5 px-8'>
+    <div className='w-full bg-gray-100 pb-4 pt-0.5 px-2'>
       <div className='flex items-center mx-auto border border-slate-400 px-2 lg:w-[500px] w-76 rounded-3xl bg-white mt-4 lg:py-0.5'>
         <img src={assets.search_icon} className='w-9 cursor-pointer border-r-2 py-2 border-gray-400 px-2' alt=''></img>
         <input

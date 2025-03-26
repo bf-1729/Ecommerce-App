@@ -192,7 +192,7 @@ const KidsWear = () => {
           <div className="border-b pb-8 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-2 px-0 w-full">
             {filterProducts.length ? (filterProducts.slice(start, end).map((item, index) => (
               <ProductItem key={index} id={item._id} name={item.name} company={item.company} image={item.image} price={item.price} />))) 
-              : (<div className="flex items-center justify-center text-black font-extrabold h-[300px] lg:w-[900px] w-screen"><h1 className="lg:text-2xl text-lg">No Items Found</h1></div>)}
+              : (<div className="flex items-center justify-start text-black h-[300px] text-nowrap lg:w-[900px]"><h1 className="lg:text-2xl text-lg text-gray-400 font-semibold">No Items Found</h1></div>)}
           </div>
           {filterProducts.length ? (
           <div className="flex gap-4 justify-center items-center mt-4">
