@@ -75,7 +75,7 @@ const Orders = ({token}) => {
     fetchAllOrders();
   },[token])
   return (
-    <div className='ml-20 lg:ml-44 mt-12 w-full'>
+    <div className='ml-[24%] lg:ml-44 mt-12 w-full'>
       <h3 className='font-semibold'>Order Page</h3>
       <div className='lg:flex grid grid-cols-2 gap-x-0 justify-between'>
       <p className='lg:text-md text-sm'>Total Orders:{orders.length}</p>

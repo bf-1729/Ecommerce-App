@@ -112,7 +112,7 @@ const KidsWear = () => {
       <SearchBar/>
       <div className="flex flex-col sm:flex-row gap-4 pt-4">
         
-        <div className="min-w-60 lg:pl-0 pl-1.5">
+        <div className="min-w-60 lg:pl-0 px-1">
           <p onClick={() => setShowFilter(!showFilter)}
             className="text-xl flex items-center cursor-pointer gap-2"
           >
