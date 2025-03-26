@@ -3,7 +3,7 @@ import {assets} from "../assets/assets"
 
 const Navbar = ({setToken}) => {
   return (
-    <div className='w-full flex items-center py-3 px-[3%] justify-between'>
+    <div className='fixed top-0 w-full flex items-center lg:py-3 py-3 px-[3%] justify-between bg-white border-b'>
       
       <a href='https://buyease-frontend.vercel.app'>
         <img className='lg:w-36 w-32 lg:h-8 h-7' src={assets.logo} alt=''></img>

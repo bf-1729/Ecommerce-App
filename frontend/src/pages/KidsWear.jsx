@@ -178,7 +178,7 @@ const KidsWear = () => {
         </div>
 
         <div className="flex-1">
-          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-1 pr-1">
+          <div className="flex justify-between text-base sm:text-2xl mb-2 lg:pr-0 pr-1">
             <Title text1={"KIDS"} text2={"COLLECTIONS"} />
 
             <select onChange={(e) => setSortType(e.target.value)}

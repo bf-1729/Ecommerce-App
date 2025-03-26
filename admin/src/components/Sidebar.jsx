@@ -6,7 +6,7 @@ const Sidebar = () => {
   const [showFilter, setShowFilter] = useState(false);
 
   return (
-    <div className="w-[17%] sm:w-52 min-h-screen text-black shadow-md overflow-hidden">
+    <div className="w-[17%] sm:w-52 min-h-screen text-black shadow-md overflow-hidden fixed left-100 top-14">
       <div className="flex flex-col gap-4 pt-8 px-4">
 
         <NavLink
